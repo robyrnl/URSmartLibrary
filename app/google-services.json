@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "946482851391",
+    "firebase_url": "https://ursmartlibrary.firebaseio.com",
+    "project_id": "ursmartlibrary",
+    "storage_bucket": "ursmartlibrary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946482851391:android:0736ef6cd135481a",
+        "android_client_info": {
+          "package_name": "id.ac.unri.ursmartlibrary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946482851391-fmtnd9k315ppor1qd23593ev7l4plnhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJR0E0YsbcoRE3B0o_z__CGZu3laiQRCg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
