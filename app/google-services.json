@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "946482851391-qdsoiel5cf2mfilndq5dsrauabg1a784.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.unri.ursmartlibrary",
+            "certificate_hash": "db3fd1f8b62205394aed72cda9e1b21014748f34"
+          }
+        },
+        {
           "client_id": "946482851391-fmtnd9k315ppor1qd23593ev7l4plnhb.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946482851391-fmtnd9k315ppor1qd23593ev7l4plnhb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

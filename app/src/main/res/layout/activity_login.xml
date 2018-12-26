@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
     tools:context=".loginActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/judulUR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UR"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="35sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/loginImage"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:srcCompat="@drawable/library"
+        android:background="@color/background"/>
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMART LIBRARY"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="35sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/etLUser"
+        android:background="@drawable/edit_text_style"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Email..."
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:background="@drawable/edit_text_style"
+        android:hint="Password"
+        android:id="@+id/etLPass"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:background="@drawable/button_style"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="55dp"
+        android:layout_gravity="right"
+        android:text="LOGIN"
+        android:textColor="@color/background"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"/>
+
+
+</LinearLayout>
