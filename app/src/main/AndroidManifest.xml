@@ -18,8 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="homeActivity" />
-        <activity android:name=".signUpActivity"></activity>
+        <activity android:name=".homeActivity" />
+        <activity android:name=".signUpActivity" />
+        <activity android:name=".about"></activity>
     </application>
 
 </manifest>
