@@ -59,7 +59,7 @@
         app:layout_constraintRight_toRightOf="@+id/txtIsiNama"
         app:layout_constraintTop_toBottomOf="@+id/imgProfile"
         android:layout_marginTop="58dp"
-        android:layout_marginLef="10dp"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/txtNIM"
@@ -91,7 +91,7 @@
         app:layout_constraintRight_toRightOf="@+id/txtIsiNIM"
         app:layout_constraintTop_toBottomOf="@+id/gantiNama"
         android:layout_marginTop="6dp"
-        android:layout_marginLef="10dp"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/txtJurusan"
@@ -123,7 +123,7 @@
         app:layout_constraintRight_toRightOf="@+id/txtIsiJurusan"
         app:layout_constraintTop_toBottomOf="@+id/gantiNIM"
         android:layout_marginTop="6dp"
-        android:layout_marginLef="10dp"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/txtEmail"
@@ -155,7 +155,7 @@
         app:layout_constraintRight_toRightOf="@+id/txtIsiNIM"
         app:layout_constraintTop_toBottomOf="@+id/gantiJurusan"
         android:layout_marginTop="6dp"
-        android:layout_marginLef="10dp"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/txtHp"
@@ -187,6 +187,6 @@
         app:layout_constraintRight_toRightOf="@+id/txtIsiNIM"
         app:layout_constraintTop_toBottomOf="@+id/gantiEmail"
         android:layout_marginTop="6dp"
-        android:layout_marginLef="10dp"/>
+        android:layout_marginLeft="10dp"/>
 
 </android.support.constraint.ConstraintLayout>
