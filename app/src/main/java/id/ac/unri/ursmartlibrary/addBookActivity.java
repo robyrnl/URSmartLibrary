@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class addBookActivity extends AppCompatActivity {
 
     EditText etJudulBuku;
@@ -15,6 +18,7 @@ public class addBookActivity extends AppCompatActivity {
     EditText etTahunBuku;
     Button buttonAddBook;
 
+    //FirebaseDatabase
     DatabaseReference databaseBuku;
 
     @Override
