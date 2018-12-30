@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.sql.DatabaseMetaData;
+
 public class addBookActivity extends AppCompatActivity {
 
     EditText etJudulBuku;
@@ -15,7 +17,7 @@ public class addBookActivity extends AppCompatActivity {
     EditText etTahunBuku;
     Button buttonAddBook;
 
-    DatabaseReference databaseBuku;
+    //DatabaseReference databaseBuku;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class addBookActivity extends AppCompatActivity {
         etPengarangBuku = (EditText) findViewById(R.id.etPengarangBuku);
         etTahunBuku = (EditText) findViewById(R.id.etTahunBuku);
 
-        databaseBuku = FirebaseDatabase.getInstance().getReference("Buku");
+        //databaseBuku = FirebaseDatabase.getInstance().getReference("Buku");
 
         buttonAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,10 +44,10 @@ public class addBookActivity extends AppCompatActivity {
         String tahun = etTahunBuku.getText().toString();
 
         if(!TextUtils.isEmpty(judul) || !TextUtils.isEmpty(pengarang) || !TextUtils.isEmpty(tahun)) {
-            String id = databaseBuku.push().getKey();
-            Buku buku = new Buku(id, judul, pengarang, tahun);
+            //String id = databaseBuku.push().getKey();
+            Buku buku = new Buku(judul, pengarang, tahun);
 
-            databaseBuku.child(id).setValue(buku);
+            //databaseBuku.child(id).setValue(buku);
             Toast.makeText(this, "Buku telah ditambahkan", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Judul, pengarang dan tahun buku tidak boleh kosong!", Toast.LENGTH_LONG).show();
