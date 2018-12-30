@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import android.widget.EditText;
+
 public class loginActivity extends AppCompatActivity {
 
-    private Button btnLogin;
+    Button btnLogin;
+    EditText etUser,etPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +31,9 @@ public class loginActivity extends AppCompatActivity {
     public void openHome () {
         Intent intent = new Intent(this, homeActivity.class);
         startActivity(intent);
+    }
+
+    public void signUpPage(View view) {
+        startActivity(new Intent(loginActivity.this,signUpActivity.class));
     }
 }

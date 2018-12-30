@@ -6,6 +6,8 @@ public class Buku {
     String pengarang;
     String tahun;
 
+
+
     public Buku (String judul, String pengarang, String tahun) {
         this.judul = judul;
         this.pengarang = pengarang;

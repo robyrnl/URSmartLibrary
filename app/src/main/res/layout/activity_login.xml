@@ -82,28 +82,30 @@
         android:textColor="@color/background"
         android:textStyle="bold"
         android:fontFamily="sans-serif-smallcaps"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_marginLeft="80dp"
             android:layout_height="wrap_content"
-            android:text="Belum Punya Akun?"
             android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
+            android:text="Belum Punya Akun?"
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tvSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="signUpPage"
+            android:paddingLeft="8dp"
             android:text="Daftar Disini"
             android:textColor="@color/biru"
-            android:layout_gravity="center"
-            android:paddingLeft="8dp"
             android:textSize="15sp" />
-        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
