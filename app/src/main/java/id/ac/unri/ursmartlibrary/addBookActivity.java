@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,7 +31,7 @@ public class addBookActivity extends AppCompatActivity {
         etPengarangBuku = (EditText) findViewById(R.id.etPengarangBuku);
         etTahunBuku = (EditText) findViewById(R.id.etTahunBuku);
 
-        databaseBuku = FirebaseDatabase.getInstance().getReference("Buku");
+        //databaseBuku = FirebaseDatabase.getInstance().getReference("Buku");
 
         buttonAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,10 +47,10 @@ public class addBookActivity extends AppCompatActivity {
         String tahun = etTahunBuku.getText().toString();
 
         if(!TextUtils.isEmpty(judul) || !TextUtils.isEmpty(pengarang) || !TextUtils.isEmpty(tahun)) {
-            String id = databaseBuku.push().getKey();
-            Buku buku = new Buku(id, judul, pengarang, tahun);
+            //String id = databaseBuku.push().getKey();
+            Buku buku = new Buku(judul, pengarang, tahun);
 
-            databaseBuku.child(id).setValue(buku);
+            //databaseBuku.child(id).setValue(buku);
             Toast.makeText(this, "Buku telah ditambahkan", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Judul, pengarang dan tahun buku tidak boleh kosong!", Toast.LENGTH_LONG).show();
