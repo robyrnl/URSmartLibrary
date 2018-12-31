@@ -1,6 +1,8 @@
 package id.ac.unri.ursmartlibrary;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,7 @@ public class homeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
     }
 
     public void onClick(View v) {
@@ -22,7 +25,7 @@ public class homeActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.btnDaftarBukuHome:
-                intent = new Intent(this, daftarBukuActivity.class);
+                intent = new Intent(this, daftarBuku.class);
                 startActivity(intent);
                 break;
             case R.id.btnTambahBukuHome:
@@ -31,10 +34,6 @@ public class homeActivity extends AppCompatActivity {
                 break;
             case R.id.btnPinjamBukuHome:
                 intent = new Intent(this, pinjamBukuActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.btnAboutHome:
-                intent = new Intent(this, about.class);
                 startActivity(intent);
                 break;
         }

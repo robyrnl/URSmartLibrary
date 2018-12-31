@@ -5,7 +5,7 @@
     <color name="abu">#fafafa</color>
     <color name="cancel">#a39d9d</color>
     <color name="biru">#225eec</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#ff792b</color>
+    <color name="colorPrimaryDark">#9e3b00</color>
     <color name="colorAccent">#D81B60</color>
 </resources>

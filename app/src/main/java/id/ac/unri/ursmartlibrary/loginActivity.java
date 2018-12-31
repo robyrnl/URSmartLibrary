@@ -29,7 +29,7 @@ public class loginActivity extends AppCompatActivity {
     }
 
     public void openHome () {
-        Intent intent = new Intent(this, homeActivity.class);
+        Intent intent = new Intent(this, homeActivityFragmen.class);
         startActivity(intent);
     }
 

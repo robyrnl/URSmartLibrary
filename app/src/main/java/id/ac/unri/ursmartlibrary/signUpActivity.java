@@ -1,5 +1,6 @@
 package id.ac.unri.ursmartlibrary;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,8 +18,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class signUpActivity extends AppCompatActivity {
 
-    EditText etRmail,etRpass;
-    Button btnSignUp;
+    EditText etRmail, etRpass;
+    Button btnSignUp, btnBatal;
 
     private FirebaseAuth mAuth;
 
@@ -31,8 +32,16 @@ public class signUpActivity extends AppCompatActivity {
         etRmail = findViewById(R.id.etREmail);
         etRpass = findViewById(R.id.etRPass);
         btnSignUp = findViewById(R.id.btnRDaftar);
+        btnBatal = findViewById(R.id.btnRCancel);
 
         mAuth = FirebaseAuth.getInstance();
+
+        btnBatal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(signUpActivity.this,loginActivity.class));
+            }
+        });
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +61,7 @@ public class signUpActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(signUpActivity.this,"Pendaftaran Berhasil",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(signUpActivity.this,loginActivity.class));
                 }
                 else
                 {

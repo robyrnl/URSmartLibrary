@@ -3,11 +3,11 @@ package id.ac.unri.ursmartlibrary;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class daftarBukuActivity extends AppCompatActivity {
+public class daftarBuku extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity);
+        setContentView(R.layout.activity_daftar_buku);
     }
 }

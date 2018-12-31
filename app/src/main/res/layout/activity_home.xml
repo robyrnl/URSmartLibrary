@@ -1,90 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".homeActivity">
+    tools:context=".homeActivity"
+    android:background="@color/background">
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/TextHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home"
         android:textSize="28dp"
         android:layout_gravity="center"
-        />
+        />-->
 
     <Button
         android:id="@+id/btnProfilHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Profil"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+
         android:textSize="18dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/ic_account_circle_black_24dp"
         android:onClick="onClick"
         />
 
     <Button
         android:id="@+id/btnDaftarBukuHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Daftar Buku"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:textSize="18dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="220dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_style"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bookcase"
         android:onClick="onClick"
         />
 
     <Button
         android:id="@+id/btnPinjamBukuHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="Pinjam Buku"
         android:textSize="18dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginRight="30dp"
+        android:layout_marginTop="250dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/book"
         android:onClick="onClick"
         />
 
     <Button
         android:id="@+id/btnTambahBukuHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tambah Buku"
-        android:textSize="18dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginRight="50dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_style"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/reading"
         android:onClick="onClick"
-        />
+        android:text="Tambah Buku"
+        android:textSize="18dp" />
 
-    <Button
+    <!--<Button
         android:id="@+id/btnAboutHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About"
-        android:textSize="18dp"
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/button_style"
+        android:background="@drawable/"
         android:onClick="onClick"
-        />
+        android:text="About"
+        android:textSize="18dp" />-->
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
