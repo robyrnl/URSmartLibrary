@@ -8,8 +8,12 @@ public class PinjamBuku extends Buku {
 
     String tanggalPeminjaman;
 
+    public PinjamBuku(String judul, String pengarang, String tahun, String id) {
+        super(judul, pengarang, tahun, id);
+    }
+
     public void PinjamBuku (String id) {
-        tanggalPeminjaman = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
+        //tanggalPeminjaman = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
     }
 
 }

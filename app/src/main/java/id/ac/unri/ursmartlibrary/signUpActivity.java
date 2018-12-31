@@ -15,13 +15,16 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signUpActivity extends AppCompatActivity {
 
-    EditText etRmail, etRpass;
+    EditText etRmail, etRpass, etRnama, etRjurusan, etNotlpn, etRnim;
     Button btnSignUp, btnBatal;
 
     private FirebaseAuth mAuth;
+    DatabaseReference databaseUser;
 
 
     @Override
@@ -29,8 +32,14 @@ public class signUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        databaseUser = FirebaseDatabase.getInstance().getReference("user");
+
         etRmail = findViewById(R.id.etREmail);
         etRpass = findViewById(R.id.etRPass);
+        etRjurusan = findViewById(R.id.etRjurusan);
+        etNotlpn= findViewById(R.id.etRNotlp);
+        etRnim = findViewById(R.id.etRNim);
+        etRnama = findViewById(R.id.etRnama);
         btnSignUp = findViewById(R.id.btnRDaftar);
         btnBatal = findViewById(R.id.btnRCancel);
 
@@ -46,20 +55,71 @@ public class signUpActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                formCheck();
                 UserRegister();
             }
         });
 
     }
+
+    private void formCheck() {
+        String email = etRmail.getText().toString().trim();
+        String pass = etRpass.getText().toString().trim();
+        String nim = etRnim.getText().toString().trim();
+        String nama = etRnama.getText().toString().trim();
+        String jurusan = etRjurusan.getText().toString().trim();
+        String notlp = etNotlpn.getText().toString().trim();
+
+        if(email.isEmpty()){
+            etRmail.setError("Email Belum Terisi");
+            etRmail.requestFocus();
+            return;
+        }
+        else if(pass.isEmpty()){
+            etRpass.setError("Password Belum Terisi");
+            etRpass.requestFocus();
+            return;
+        }
+        else if(nim.isEmpty()){
+            etRpass.setError("NIM Belum Terisi");
+            etRpass.requestFocus();
+            return;
+        }
+        else if(nama.isEmpty()){
+            etRpass.setError("Nama Belum Terisi");
+            etRpass.requestFocus();
+            return;
+        }
+        else if(jurusan.isEmpty()){
+            etRpass.setError("Jurusan Belum Terisi");
+            etRpass.requestFocus();
+            return;
+        }
+        else if(notlp.isEmpty()){
+            etRpass.setError("No Telepon Belum Terisi");
+            etRpass.requestFocus();
+            return;
+        }
+    }
+
     private void UserRegister(){
-        String email,pass;
+        final String email,pass;
         email = etRmail.getText().toString();
         pass = etRpass.getText().toString();
+        final String nim = etRnim.getText().toString();
+        final String nama = etRnama.getText().toString();
+        final String jurusan = etRjurusan.getText().toString();
+        final String notlp = etNotlpn.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+                    String id = databaseUser.push().getKey();
+                    User user = new User(id, nama, jurusan, nim, notlp, email);
+                    databaseUser.child(id).setValue(user);
+
                     Toast.makeText(signUpActivity.this,"Pendaftaran Berhasil",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(signUpActivity.this,loginActivity.class));
                 }
