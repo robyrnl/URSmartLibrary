@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -116,6 +117,7 @@ public class signUpActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
 
+                    //fungsi untuk memasukkan data kedatabase, jangan lupa buat getter dan constructor
                     String id = databaseUser.push().getKey();
                     User user = new User(id, nama, jurusan, nim, notlp, email);
                     databaseUser.child(id).setValue(user);
@@ -125,7 +127,13 @@ public class signUpActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(signUpActivity.this,"Pendaftaran Gagal",Toast.LENGTH_SHORT).show();
+                    if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                        Toast.makeText(getApplicationContext(),"Anda Sudah Terdaftar",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
