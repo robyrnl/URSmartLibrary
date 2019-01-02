@@ -56,20 +56,20 @@ public class signUpActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                formCheck();
                 UserRegister();
             }
         });
 
     }
 
-    private void formCheck() {
-        String email = etRmail.getText().toString().trim();
-        String pass = etRpass.getText().toString().trim();
-        String nim = etRnim.getText().toString().trim();
-        String nama = etRnama.getText().toString().trim();
-        String jurusan = etRjurusan.getText().toString().trim();
-        String notlp = etNotlpn.getText().toString().trim();
+    private void UserRegister(){
+        final String email,pass;
+        email = etRmail.getText().toString();
+        pass = etRpass.getText().toString();
+        final String nim = etRnim.getText().toString();
+        final String nama = etRnama.getText().toString();
+        final String jurusan = etRjurusan.getText().toString();
+        final String notlp = etNotlpn.getText().toString();
 
         if(email.isEmpty()){
             etRmail.setError("Email Belum Terisi");
@@ -101,16 +101,6 @@ public class signUpActivity extends AppCompatActivity {
             etRpass.requestFocus();
             return;
         }
-    }
-
-    private void UserRegister(){
-        final String email,pass;
-        email = etRmail.getText().toString();
-        pass = etRpass.getText().toString();
-        final String nim = etRnim.getText().toString();
-        final String nama = etRnama.getText().toString();
-        final String jurusan = etRjurusan.getText().toString();
-        final String notlp = etNotlpn.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
