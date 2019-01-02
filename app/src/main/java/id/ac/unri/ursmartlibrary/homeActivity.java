@@ -10,32 +10,27 @@ import android.widget.Button;
 
 public class homeActivity extends AppCompatActivity {
 
+    Button btnTambahBuku;
+    Button btnPinjamBuku;
+    Button btnProfile;
+    Button btnDaftarBuku;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-    }
+        btnTambahBuku = findViewById(R.id.btnTambahBukuHome);
+        btnDaftarBuku = findViewById(R.id.btnDaftarBukuHome);
+        btnProfile = findViewById(R.id.btnProfilHome);
+        btnPinjamBuku = findViewById(R.id.btnPinjamBukuHome);
 
-    public void onClick(View v) {
-        Intent intent = null;
-        switch (v.getId()) {
-            case R.id.btnProfilHome:
-                intent = new Intent(this, profile.class);
-                startActivity(intent);
-                break;
-            case R.id.btnDaftarBukuHome:
-                intent = new Intent(this, daftarBuku.class);
-                startActivity(intent);
-                break;
-            case R.id.btnTambahBukuHome:
-                intent = new Intent(this, addBookActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.btnPinjamBukuHome:
-                intent = new Intent(this, pinjamBukuActivity.class);
-                startActivity(intent);
-                break;
-        }
+        btnTambahBuku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, addBookActivity.class));
+            }
+        });
+
     }
 }
