@@ -42,15 +42,6 @@ public class loginActivity extends AppCompatActivity {
         });
     }
 
-    private void formCheck() {
-
-        String email = etUser.getText().toString();
-        String pass = etPass.getText().toString();
-
-
-
-    }
-
     public void openHome () {
 
         String email = etUser.getText().toString();
