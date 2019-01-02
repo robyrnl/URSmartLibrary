@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -14,10 +15,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class addBookActivity extends AppCompatActivity {
 
+    private static final int PICK_IMAGE_REQUEST = 1;
+
     EditText etJudulBuku;
     EditText etPengarangBuku;
     EditText etTahunBuku;
     Button buttonAddBook;
+    Button btnTambahGambar;
+    EditText etNamaFile;
+    ImageView imgGambarBuku;
 
     //FirebaseDatabase
     DatabaseReference databaseBuku;
@@ -27,9 +33,12 @@ public class addBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
 
-        etJudulBuku = (EditText) findViewById(R.id.etJudulBuku);
-        etPengarangBuku = (EditText) findViewById(R.id.etPengarangBuku);
-        etTahunBuku = (EditText) findViewById(R.id.etTahunBuku);
+        etJudulBuku = findViewById(R.id.etJudulBuku);
+        etPengarangBuku =  findViewById(R.id.etPengarangBuku);
+        etTahunBuku =  findViewById(R.id.etTahunBuku);
+        btnTambahGambar = findViewById(R.id.btnTmbahGambarBuku);
+        etNamaFile = findViewById(R.id.namaFile);
+        imgGambarBuku = findViewById(R.id.image_view);
 
         databaseBuku = FirebaseDatabase.getInstance().getReference("Buku");
 
