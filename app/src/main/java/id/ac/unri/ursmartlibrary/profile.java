@@ -37,18 +37,18 @@ public class profile extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference databaseReference = firebaseDatabase.getReference(String.valueOf(firebaseAuth.getCurrentUser()));
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                ProfileAdapter profile = dataSnapshot.getValue(ProfileAdapter.class);
-                tvtNama.setText(profile.getNama());
-                tvtEmail.setText(profile.getEmail());
-                tvtJurusan.setText(profile.getJurusan());
-                tvtNim.setText(profile.getNim());
-                tvtPhone.setText(profile.getNoTlpnn());
+                ProfileAdapter profileAdapter = dataSnapshot.getValue(ProfileAdapter.class);
+                tvtNama.setText(profileAdapter.getNama());
+                tvtEmail.setText(profileAdapter.getEmail());
+                tvtJurusan.setText(profileAdapter.getJurusan());
+                tvtNim.setText(profileAdapter.getNim());
+                tvtPhone.setText(profileAdapter.getNoTlpnn());
             }
 
             @Override
