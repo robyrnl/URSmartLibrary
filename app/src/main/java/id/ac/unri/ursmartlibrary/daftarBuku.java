@@ -30,7 +30,7 @@ public class daftarBuku extends AppCompatActivity {
 
         listViewBuku = (ListView) findViewById(R.id.lvDaftarBuku);
         databaseBuku = FirebaseDatabase.getInstance().getReference("buku");
-        bukuList = new ArrayList<>();
+        bukuList = new ArrayList<Buku>();
     }
 
     @Override

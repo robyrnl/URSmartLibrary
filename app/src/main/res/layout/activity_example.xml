@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".homeActivity">
+
+    <TextView
+        android:id="@+id/TextTambahBuku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Buku"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:textColor="@color/button"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/Judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Judul"
+        android:textSize="18dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="35dp"
+        />
+
+    <EditText
+        android:background="@drawable/edit_text_style"
+        android:id="@+id/etJudulBuku"
+        android:layout_height="wrap_content"
+        android:layout_width="310dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <TextView
+        android:id="@+id/Pengarang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pengarang"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+        />
+
+    <EditText
+        android:background="@drawable/edit_text_style"
+        android:id="@+id/etPengarangBuku"
+        android:layout_height="80dp"
+        android:layout_width="310dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/TahunBuku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tahun Buku"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+        />
+
+    <EditText
+        android:background="@drawable/edit_text_style"
+        android:id="@+id/etTahunBuku"
+        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="33dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:background="@drawable/button_cancel_style"
+            android:id="@+id/btnTBCancel"
+            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:text="Batal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="79dp"
+            />
+
+        <Button
+            android:background="@drawable/button_style"
+            android:id="@+id/btnTBTambah"
+            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:text="Tambah"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="13dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

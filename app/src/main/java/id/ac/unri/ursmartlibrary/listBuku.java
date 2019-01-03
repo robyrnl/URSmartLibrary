@@ -36,10 +36,10 @@ public class listBuku extends ArrayAdapter<Buku> {
 
         Buku buku = daftarBuku.get(position);
 
-        textViewJudul.setText(buku.getJudulBuku());
+        textViewJudul.setText(buku.getJudul());
         textViewId.setText(buku.getId());
-        textViewPengarang.setText(buku.getPengarangBuku());
-        textViewTahun.setText(buku.getTahunTerbit());
+        textViewPengarang.setText(buku.getPengarang());
+        textViewTahun.setText(buku.getTahun());
 
         return listViewItem;
     }

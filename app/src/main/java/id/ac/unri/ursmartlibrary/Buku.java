@@ -1,10 +1,5 @@
 package id.ac.unri.ursmartlibrary;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-
 public class Buku {
 
     String judul;
@@ -19,17 +14,19 @@ public class Buku {
         this.id = id;
     }
 
-    public String getJudulBuku() {
+    public String getJudul() {
         return judul;
     }
 
-    public String getPengarangBuku() {
+    public String getPengarang() {
         return pengarang;
     }
 
-    public String getTahunTerbit() {
+    public String getTahun() {
         return tahun;
     }
 
-    public String getId() { return id; }
+    public String getId() {
+        return id;
+    }
 }

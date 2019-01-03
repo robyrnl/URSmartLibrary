@@ -22,7 +22,7 @@
         <activity android:name=".homeActivity" />
         <activity android:name=".about" />
         <activity android:name=".daftarBuku" />
-        <activity android:name=".addBookActivity" />
+        <activity android:name=".addBookActivity"/>
         <activity android:name=".pinjamBukuActivity" />
         <activity android:name=".profile" />
         <activity android:name=".homeActivityFragmen"></activity>
