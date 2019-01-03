@@ -19,6 +19,7 @@ public class Buku {
         this.id = id;
     }
 
+
     public String getJudulBuku() {
         return judul;
     }
