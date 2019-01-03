@@ -43,7 +43,6 @@ public class addBookActivity extends AppCompatActivity {
     EditText etTahunBuku;
     Button buttonAddBook;
     Button btnTambahGambar;
-    EditText etNamaFile;
     ImageView imgGambarBuku;
     ProgressBar progressBar;
 
@@ -63,7 +62,6 @@ public class addBookActivity extends AppCompatActivity {
         etPengarangBuku =  findViewById(R.id.etPengarangBuku);
         etTahunBuku =  findViewById(R.id.etTahunBuku);
         btnTambahGambar = findViewById(R.id.btnTmbahGambarBuku);
-        etNamaFile = findViewById(R.id.namaFile);
         imgGambarBuku = findViewById(R.id.image_view);
         progressBar = findViewById(R.id.progresbar);
 
@@ -80,7 +78,6 @@ public class addBookActivity extends AppCompatActivity {
         buttonAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addBook();
                 uploadFile();
             }
         });
@@ -113,7 +110,7 @@ public class addBookActivity extends AppCompatActivity {
 
     private void uploadFile(){
 
-        if(mImageUri != null){
+        if(etJudulBuku != null && etPengarangBuku != null && etTahunBuku != null && mImageUri != null){
             mStorageRef.putFile(mImageUri).continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                 @Override
                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
@@ -129,65 +126,24 @@ public class addBookActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Uri downloadUri = task.getResult();
                                 Log.e(TAG, "then" + downloadUri.toString());
-                                Upload upload = new Upload(etNamaFile.getText().toString().trim(), downloadUri.toString());
+
+                                String judul = etJudulBuku.getText().toString().trim();
+                                String pengarang = etPengarangBuku.getText().toString().trim();
+                                String tahun = etTahunBuku.getText().toString();
+
                                 String uploadId = databaseBuku.push().getKey();
-                                databaseBuku.child(uploadId).setValue(upload);
+                                Buku buku = new Buku (judul, pengarang, tahun, uploadId, downloadUri.toString());
+                                databaseBuku.child(uploadId).setValue(buku);
+
+                                Toast.makeText(addBookActivity.this, "Buku telah ditambahkan", Toast.LENGTH_LONG).show();
                             }
                             else{
 
                                 Toast.makeText(addBookActivity.this, "gagal upload : "+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-
                             }
 
                         }
                     });
-            /*StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+ "." + getFileExtension(mImageUri));
-            fileReference.putFile(mImageUri)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    progressBar.setProgress(0);
-                                }
-                            }, 5000);
-
-                            Toast.makeText(addBookActivity.this, "Berhasil diUpload", Toast.LENGTH_SHORT).show();
-                            Upload upload = new Upload(etNamaFile.getText().toString().trim(), taskSnapshot.getDownloadurl.toString());
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(addBookActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-                            progressBar.setProgress((int) progress);
-                        }
-                    });*/
         }
     }
-
-    private void addBook () {
-        String judul = etJudulBuku.getText().toString().trim();
-        String pengarang = etPengarangBuku.getText().toString().trim();
-        String tahun = etTahunBuku.getText().toString();
-
-        if(!TextUtils.isEmpty(judul) || !TextUtils.isEmpty(pengarang) || !TextUtils.isEmpty(tahun)) {
-            String id = databaseBuku.push().getKey();
-            Buku buku = new Buku (id, judul, pengarang, tahun);
-            databaseBuku.child(id).setValue(buku);
-
-            Toast.makeText(this, "Buku telah ditambahkan", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "Judul, pengarang dan tahun buku tidak boleh kosong!", Toast.LENGTH_LONG).show();
-        }
-    }
-
 }
