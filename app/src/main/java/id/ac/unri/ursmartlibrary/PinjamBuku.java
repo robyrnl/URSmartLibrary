@@ -54,6 +54,4 @@ public class PinjamBuku {
     }
 
     //tanggalPeminjaman = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
-
-
 }

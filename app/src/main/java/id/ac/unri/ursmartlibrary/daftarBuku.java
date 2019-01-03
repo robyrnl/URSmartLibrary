@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +23,8 @@ public class daftarBuku extends AppCompatActivity {
     ListView listViewBuku;
     DatabaseReference databaseBuku;
 
+    ValueEventListener valueEventListener;
+
     List<Buku> bukuList;
 
     @Override
@@ -29,23 +33,36 @@ public class daftarBuku extends AppCompatActivity {
         setContentView(R.layout.activity_daftar_buku);
 
         listViewBuku = (ListView) findViewById(R.id.lvDaftarBuku);
-        databaseBuku = FirebaseDatabase.getInstance().getReference("buku");
-        bukuList = new ArrayList<Buku>();
+        databaseBuku = FirebaseDatabase.getInstance().getReference("Buku");
+        bukuList = new ArrayList<>();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        databaseBuku.removeEventListener(valueEventListener);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        databaseBuku.addValueEventListener(new ValueEventListener() {
+        valueEventListener = databaseBuku.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 bukuList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Buku buku = snapshot.getValue(Buku.class);
+                    //Buku buku = snapshot.child("Buku").getValue(Buku.class).toString();
+                    //bukuList.add(buku);
 
+                    String judul = snapshot.child("judul").getValue().toString();
+                    String uploadId = snapshot.child("id").getValue().toString();
+                    String pengarang = snapshot.child("pengarang").getValue().toString();
+                    String tahun = snapshot.child("tahun").getValue().toString();
+
+                    Buku buku = new Buku (judul, pengarang, tahun, uploadId, "No Name");
                     bukuList.add(buku);
-                }
+                    }
 
                 listBuku adapter = new listBuku(daftarBuku.this, bukuList);
                 listViewBuku.setAdapter(adapter);
@@ -53,7 +70,7 @@ public class daftarBuku extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(getApplicationContext(), databaseError.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
