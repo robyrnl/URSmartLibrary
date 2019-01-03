@@ -32,5 +32,26 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
+        btnPinjamBuku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, pinjamBukuActivity.class));
+            }
+        });
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this, profile.class));
+            }
+        });
+
+        btnDaftarBuku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(homeActivity.this,daftarBuku.class));
+            }
+        });
+
     }
 }
