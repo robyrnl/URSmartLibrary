@@ -70,6 +70,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="15dp"
             android:src="@drawable/button_style"
+            android:id="@+id/photo1"
             />
 
         <ImageButton
@@ -78,6 +79,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="15dp"
             android:src="@drawable/button_style"
+            android:id="@+id/photo2"
             />
 
         <ImageButton
@@ -86,6 +88,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="15dp"
             android:src="@drawable/button_style"
+            android:id="@+id/photo3"
             />
 
     </LinearLayout>

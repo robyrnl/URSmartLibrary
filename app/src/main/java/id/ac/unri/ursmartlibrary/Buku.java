@@ -6,12 +6,14 @@ public class Buku {
     String pengarang;
     String tahun;
     String id;
+    String mURL;
 
-    public Buku (String judul, String pengarang, String tahun, String id) {
+    public Buku(String judul, String pengarang, String tahun, String id, String mURL) {
         this.judul = judul;
         this.pengarang = pengarang;
         this.tahun = tahun;
         this.id = id;
+        this.mURL = mURL;
     }
 
     public String getJudul() {
@@ -28,5 +30,9 @@ public class Buku {
 
     public String getId() {
         return id;
+    }
+
+    public String getmURL() {
+        return mURL;
     }
 }

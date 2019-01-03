@@ -1,192 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".homeActivity">
-
-    <Button
-        android:id="@+id/btnKembaliProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="X"
-
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        />
 
     <ImageView
         android:id="@+id/imgProfile"
         android:layout_width="wrap_content"
         android:layout_height="111dp"
         android:layout_marginTop="24dp"
+        android:layout_gravity="center"
         android:src="@drawable/ic_launcher_background"
+        />
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtNama"
-        android:layout_height="wrap_content"
-        android:layout_width="70dp"
-        android:text="Nama"
+        <TextView
+            android:id="@+id/tvPNim"
+            android:layout_width="51dp"
+            android:layout_height="41dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:gravity="center|left"
+            android:text="NIM" />
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfile"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="50dp" />
+        <TextView
+            android:id="@+id/tvPIsiNim"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="37dp"
+            android:layout_toEndOf="@+id/tvPNim"
+            android:background="@drawable/edit_text_style" />
 
-    <TextView
-        android:id="@+id/txtIsiNama"
-        android:layout_height="wrap_content"
-        android:layout_width="160dp"
-        android:hint="nama_saya"
+        <TextView
+            android:id="@+id/tvPIsiNama"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPIsiNim"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="37dp"
+            android:layout_toEndOf="@+id/tvPNama"
+            android:background="@drawable/edit_text_style" />
 
-        app:layout_constraintLeft_toLeftOf="@id/txtNama"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfile"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="80dp" />
+        <TextView
+            android:id="@+id/tvPIsiEmail"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPIsiNama"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="37dp"
+            android:layout_toEndOf="@+id/tvPEmail"
+            android:background="@drawable/edit_text_style" />
 
-    <Button
-        android:id="@+id/gantiNama"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        <TextView
+            android:id="@+id/tvPIsiProdi"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPIsiEmail"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="37dp"
+            android:layout_toEndOf="@+id/tvPEmail"
+            android:background="@drawable/edit_text_style" />
 
-        app:layout_constraintRight_toRightOf="@+id/txtIsiNama"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfile"
-        android:layout_marginTop="58dp"
-        android:layout_marginLeft="10dp"/>
+        <TextView
+            android:id="@+id/tvPIsiNoTlpn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPIsiProdi"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_toEndOf="@+id/tvPEmail"
+            android:background="@drawable/edit_text_style" />
 
-    <TextView
-        android:id="@+id/txtNIM"
-        android:layout_height="wrap_content"
-        android:layout_width="70dp"
-        android:text="NIM"
+        <TextView
+            android:id="@+id/tvPNama"
+            android:layout_width="51dp"
+            android:layout_height="41dp"
+            android:layout_below="@+id/tvPNim"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center|left"
+            android:text="Nama" />
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNama"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="50dp" />
+        <TextView
+            android:id="@+id/tvPEmail"
+            android:layout_width="51dp"
+            android:layout_height="41dp"
+            android:layout_below="@+id/tvPNama"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center|left"
+            android:text="Email" />
 
-    <TextView
-        android:id="@+id/txtIsiNIM"
-        android:layout_height="wrap_content"
-        android:layout_width="160dp"
-        android:hint="nim_saya"
+        <TextView
+            android:id="@+id/tvPJurusan"
+            android:layout_width="51dp"
+            android:layout_height="41dp"
+            android:layout_below="@+id/tvPEmail"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center|left"
+            android:text="Jurusan/Proddi" />
 
-        app:layout_constraintLeft_toLeftOf="@id/txtNama"
-        app:layout_constraintTop_toBottomOf="@+id/txtIsiNama"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="80dp" />
+        <TextView
+            android:id="@+id/tvPNotlpn"
+            android:layout_width="51dp"
+            android:layout_height="41dp"
+            android:layout_below="@+id/tvPJurusan"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center|left"
+            android:text="No Tlpn" />
 
-    <Button
-        android:id="@+id/gantiNIM"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        <Button
+            android:id="@+id/btnPKembali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPIsiNoTlpn"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/button_cancel_style"
+            android:text="Kembali"
+            android:textColor="@color/background"/>
 
-        app:layout_constraintRight_toRightOf="@+id/txtIsiNIM"
-        app:layout_constraintTop_toBottomOf="@+id/gantiNama"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/txtJurusan"
-        android:layout_height="wrap_content"
-        android:layout_width="70dp"
-        android:text="Jurusan"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNIM"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="50dp" />
-
-    <TextView
-        android:id="@+id/txtIsiJurusan"
-        android:layout_height="wrap_content"
-        android:layout_width="160dp"
-        android:hint="jurusan_saya"
-
-        app:layout_constraintLeft_toLeftOf="@id/txtJurusan"
-        app:layout_constraintTop_toBottomOf="@+id/txtIsiNIM"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="80dp" />
-
-    <Button
-        android:id="@+id/gantiJurusan"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-
-        app:layout_constraintRight_toRightOf="@+id/txtIsiJurusan"
-        app:layout_constraintTop_toBottomOf="@+id/gantiNIM"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="10dp"/>
-
-    <TextView
-        android:id="@+id/txtEmail"
-        android:layout_height="wrap_content"
-        android:layout_width="70dp"
-        android:text="Email"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtJurusan"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="50dp" />
-
-    <TextView
-        android:id="@+id/txtIsiEmail"
-        android:layout_height="wrap_content"
-        android:layout_width="160dp"
-        android:hint="jurusan_saya"
-
-        app:layout_constraintLeft_toLeftOf="@id/txtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtIsiJurusan"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="80dp" />
-
-    <Button
-        android:id="@+id/gantiEmail"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-
-        app:layout_constraintRight_toRightOf="@+id/txtIsiNIM"
-        app:layout_constraintTop_toBottomOf="@+id/gantiJurusan"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="10dp"/>
-
-    <TextView
-        android:id="@+id/txtHp"
-        android:layout_height="wrap_content"
-        android:layout_width="70dp"
-        android:text="No Tlpn"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="50dp" />
-
-    <TextView
-        android:id="@+id/txtIsiHp"
-        android:layout_height="wrap_content"
-        android:layout_width="160dp"
-        android:hint="nomor_saya"
-
-        app:layout_constraintLeft_toLeftOf="@id/txtHp"
-        app:layout_constraintTop_toBottomOf="@+id/txtIsiEmail"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="80dp" />
-
-    <Button
-        android:id="@+id/gantiNomor"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-
-        app:layout_constraintRight_toRightOf="@+id/txtIsiNIM"
-        app:layout_constraintTop_toBottomOf="@+id/gantiEmail"
-        android:layout_marginTop="6dp"
-        android:layout_marginLeft="10dp"/>
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

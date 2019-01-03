@@ -32,30 +32,21 @@
         android:background="@color/background"
         android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/btnTmbahGambarBuku"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/button_style"
+            android:text="Upload"/>
+
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="20dp"
             />
-
-        <EditText
-            android:id="@+id/namaFile"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/edit_text_style"
-            android:hint="Nama File" />
-
-        <Button
-            android:id="@+id/btnTmbahGambarBuku"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginLeft="8dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/button_style"
-            android:text="Upload"/>
 
     </LinearLayout>
 
