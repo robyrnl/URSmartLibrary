@@ -131,6 +131,7 @@ public class addBookActivity extends AppCompatActivity {
                                 String pengarang = etPengarangBuku.getText().toString().trim();
                                 String tahun = etTahunBuku.getText().toString();
 
+
                                 String uploadId = databaseBuku.push().getKey();
                                 Buku buku = new Buku (judul, pengarang, tahun, uploadId, downloadUri.toString());
                                 databaseBuku.child(uploadId).setValue(buku);
