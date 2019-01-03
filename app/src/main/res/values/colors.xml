@@ -8,4 +8,6 @@
     <color name="colorPrimary">#ff792b</color>
     <color name="colorPrimaryDark">#9e3b00</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="gradStart">#FFC30F</color>
+    <color name="gradStop">#FF5733</color>
 </resources>

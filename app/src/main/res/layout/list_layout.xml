@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:onClick="Clickable">
 
     <TextView
         android:id="@+id/tv_judulBuku"
@@ -16,7 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ID Buku"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:textIsSelectable="true"
+        />
 
     <TextView
         android:id="@+id/tv_pengarangBuku"

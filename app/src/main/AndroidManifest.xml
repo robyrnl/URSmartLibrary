@@ -26,6 +26,7 @@
         <activity android:name=".pinjamBukuActivity" />
         <activity android:name=".profile" />
         <activity android:name=".homeActivityFragmen"></activity>
+        <activity android:name=".SplashActivity"/>
     </application>
 
 </manifest>
