@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homeActivity">
+        <activity android:name=".loginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".signUpActivity" />
-        <activity android:name=".loginActivity" />
+        <activity android:name=".homeActivity" />
         <activity android:name=".about" />
         <activity android:name=".daftarBuku" />
         <activity android:name=".addBookActivity"/>

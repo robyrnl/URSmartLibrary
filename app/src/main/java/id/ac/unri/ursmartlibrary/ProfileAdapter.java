@@ -5,19 +5,21 @@ public class ProfileAdapter {
     public String nama;
     public String nim;
     public String email;
-    public String noTlpnn;
+    public String noTlpn;
     public String jurusan;
+    public String userId;
 
     public ProfileAdapter(){
 
     }
 
-    public ProfileAdapter(String nama, String nim, String email, String noTlpnn, String jurusan) {
+    public ProfileAdapter(String nama, String nim, String email, String noTlpn, String jurusan, String userId) {
         this.nama = nama;
         this.nim = nim;
         this.email = email;
-        this.noTlpnn = noTlpnn;
+        this.noTlpn = noTlpn;
         this.jurusan = jurusan;
+        this.userId = userId;
     }
 
     public String getNama() {
@@ -45,11 +47,11 @@ public class ProfileAdapter {
     }
 
     public String getNoTlpnn() {
-        return noTlpnn;
+        return noTlpn;
     }
 
     public void setNoTlpnn(String noTlpnn) {
-        this.noTlpnn = noTlpnn;
+        this.noTlpn = noTlpnn;
     }
 
     public String getJurusan() {
@@ -58,5 +60,13 @@ public class ProfileAdapter {
 
     public void setJurusan(String jurusan) {
         this.jurusan = jurusan;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String jurusan) {
+        this.userId = userId;
     }
 }

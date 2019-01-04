@@ -100,10 +100,8 @@ public class pinjamBukuActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        })
+        });
     }
 
-    public String loadData () {
-        //final SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences();
-    }
+
 }

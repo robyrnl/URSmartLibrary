@@ -20,7 +20,7 @@ public class profile extends AppCompatActivity {
     private Button btnKembali;
 
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference firebaseDatabase;
+    private FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +35,16 @@ public class profile extends AppCompatActivity {
         btnKembali = findViewById(R.id.btnPKembali);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance().getReference("user");
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
 
-
-        //DatabaseReference databaseReference = firebaseDatabase.getReference(String.valueOf(firebaseAuth.getCurrentUser()));
-
-         firebaseDatabase.addValueEventListener(new ValueEventListener() {
+         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 ProfileAdapter profileAdapter = dataSnapshot.getValue(ProfileAdapter.class);
-                tvtNama.setText(Nama);
+                tvtNama.setText(profileAdapter.getNama());
                 tvtEmail.setText(profileAdapter.getEmail());
                 tvtJurusan.setText(profileAdapter.getJurusan());
                 tvtNim.setText(profileAdapter.getNim());
