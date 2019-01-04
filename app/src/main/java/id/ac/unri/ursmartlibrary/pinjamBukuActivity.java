@@ -1,5 +1,9 @@
 package id.ac.unri.ursmartlibrary;
 
+import android.accounts.Account;
+import android.content.SharedPreferences;
+import android.nfc.Tag;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +23,7 @@ public class pinjamBukuActivity extends AppCompatActivity {
 
     EditText etCode;
     Button btnCek;
+    Button btnPinjam;
 
     TextView tvJudul;
     TextView tvPengarang;
@@ -37,6 +42,7 @@ public class pinjamBukuActivity extends AppCompatActivity {
         tvTahun = (TextView) findViewById(R.id.txtTahun);
 
         btnCek = (Button) findViewById(R.id.btnCek);
+        btnPinjam = (Button) findViewById(R.id.btnPinjam);
 
         etCode = (EditText) findViewById(R.id.etCodeBukuPinjaman);
         final String Code = etCode.getText().toString();
@@ -47,6 +53,13 @@ public class pinjamBukuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CheckData(Code);
+            }
+        });
+
+        btnPinjam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputData();
             }
         });
     }
@@ -74,5 +87,23 @@ public class pinjamBukuActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), databaseError.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    void InputData() {
+        valueEventListener = databaseBuku.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        })
+    }
+
+    public String loadData () {
+        //final SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences();
     }
 }
